@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,p{
+    color: $dark-deep-blue-color;
+}
+body{
+    background-color: $white-lime-color;
+    font-family: $poppins;
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    // background-color: #000;
+    @media only screen and (max-width: 1050px){
+        &{
+            width: 90%;
+        }
+    } 
+}

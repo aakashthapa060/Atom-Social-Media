@@ -1,0 +1,84 @@
+// div{
+//     border: 1px solid $gray-lime-color;
+
+// }
+.form-container {
+    width: 100%;
+    height: 100vh;
+
+    .container {
+        height: 100%;
+        @include flexbox(center, row);
+
+        // border: 1px solid #000;
+        .form-view {
+            width: 350px;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            border: 1px solid $gray-lime-color;
+            @include flexbox(center, row);
+
+            &-inner-container {
+                width: 300px;
+                height: 350px;
+                @include flexbox(space-between, column);
+
+                .form-view-title {
+                    width: auto;
+                    height: auto;
+
+                    h2 {
+                        font-family: $karla;
+                        font-size: 30px;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        font-family: $karla;
+                        font-weight: 300;
+                        font-size: 15px;
+                        line-height: 20px;
+                        color: #4d4d4d;
+
+                        a {
+                            color: $dark-blue-color;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .form-view-content {
+                    width: 100%;
+                    height: 150px;
+                    // border: 1px solid $gray-lime-color;
+                    @include flexbox(space-between, column);
+
+                    div {
+                        width: 100%;
+                        height: 60px;
+                        // border: 1px solid $gray-lime-color;
+
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid $gray-lime-color;
+
+                            @include flexbox(center, row);
+                            text-decoration: none;
+                            border-radius: 5px;
+                            color: $dark-deep-blue-color;
+                            font-family: $karla;
+                            transition: 0.5s ease;
+                            &:hover {
+                                background-color: #f7f5f5;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -340,4 +340,121 @@ template {
 [hidden] {
   display: none;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #181a30;
+}
+
+body {
+  background-color: #fafbfc;
+  font-family: "poppins", sans-serif;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1050px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.form-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.form-container .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.form-container .container .form-view {
+  width: 350px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #eeecec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.form-container .container .form-view-inner-container {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-container .container .form-view-inner-container .form-view-title {
+  width: auto;
+  height: auto;
+}
+
+.form-container .container .form-view-inner-container .form-view-title h2 {
+  font-family: "karla", sans-serif;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.form-container .container .form-view-inner-container .form-view-title p {
+  font-family: "karla", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  color: #4d4d4d;
+}
+
+.form-container .container .form-view-inner-container .form-view-title p a {
+  color: #5e4ccf;
+  text-decoration: none;
+}
+
+.form-container .container .form-view-inner-container .form-view-content {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-container .container .form-view-inner-container .form-view-content div {
+  width: 100%;
+  height: 60px;
+}
+
+.form-container .container .form-view-inner-container .form-view-content div a {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #eeecec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #181a30;
+  font-family: "karla", sans-serif;
+  transition: 0.5s ease;
+}
+
+.form-container .container .form-view-inner-container .form-view-content div a:hover {
+  background-color: #f7f5f5;
+}
 /*# sourceMappingURL=main.css.map */
