@@ -352,7 +352,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 body {
-  background-color: #fafbfc;
+  background-color: #f7f7f7;
   font-family: "poppins", sans-serif;
 }
 
@@ -367,6 +367,195 @@ body {
   }
 }
 
+.login-form-container {
+  width: 100%;
+  height: auto;
+}
+
+.login-form-container .container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.login-form-container .container .login-form {
+  position: relative;
+  width: 270px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.login-form-container .container .login-form .login-form-container {
+  width: 260px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-form-container .container .login-form .login-form-container .login-form-title {
+  width: auto;
+  height: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form-container .container .login-form .login-form-container .login-form-title h2 {
+  font-family: "karla", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #181a30;
+}
+
+.login-form-container .container .login-form .login-form-container .login-error {
+  width: 100%;
+  height: 25px;
+  background: rgba(255, 69, 69, 0.74);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px dashed #ff4343;
+}
+
+.login-form-container .container .login-form .login-form-container .login-error p {
+  font-size: 14px;
+  font-family: "karla", sans-serif;
+  color: #fff;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form {
+  width: 100%;
+  height: 100%;
+  height: auto;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form {
+  width: 100%;
+  height: 100%;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .form-method {
+  margin-bottom: 10px;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .form-method .form-control {
+  width: 100%;
+  height: auto;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .form-method .form-control input {
+  width: 100%;
+  padding: 7px 6px;
+  font-size: 15px;
+  border: 0.5px solid #dfdfdf;
+  color: #3b3b3b;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.5s ease;
+  margin-bottom: 10px;
+  font-family: "karla", sans-serif;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .form-method .form-control input:hover, .login-form-container .container .login-form .login-form-container .actual-login-form form .form-method .form-control input:focus {
+  outline: none;
+  border-color: royalblue;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .form-method .login-password input {
+  margin-bottom: 0;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .have-an-account-section {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .have-an-account-section a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #5e4ccf;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .login-button {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.login-form-container .container .login-form .login-form-container .actual-login-form form .login-button button {
+  width: 100%;
+  height: 100%;
+  background: #5e4ccf;
+  border: none;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  font-family: "karla", sans-serif;
+  border-radius: 5px;
+}
+
+.info-messages {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 270px;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.info-messages .info-messages-container {
+  width: 250px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info-messages .info-messages-container p {
+  font-size: 14px;
+  font-family: "karla", sans-serif;
+}
+
+.info-messages .info-messages-container button {
+  border: none;
+  outline: none;
+  font-family: "karla", sans-serif;
+  color: #fff;
+  background: #181a30;
+  padding: 5px 14px;
+  border-radius: 5px;
+}
+
+.info-messages .alert-warning p {
+  color: #ff3852;
+}
+
+.info-messages .alert-warning button {
+  background: #ff3852;
+}
+
 .form-container {
   width: 100%;
   height: 100vh;
@@ -374,10 +563,6 @@ body {
 
 .form-container .container {
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
 }
 
 .form-container .container .form-view {
@@ -385,7 +570,6 @@ body {
   height: 400px;
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid #eeecec;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -442,7 +626,7 @@ body {
 .form-container .container .form-view-inner-container .form-view-content div a {
   width: 100%;
   height: 100%;
-  border: 1px solid #eeecec;
+  border: 1px solid #e0e0e0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -456,5 +640,14 @@ body {
 
 .form-container .container .form-view-inner-container .form-view-content div a:hover {
   background-color: #f7f5f5;
+}
+
+@media only screen and (max-width: 380px) {
+  .form-container .container .form-view {
+    width: 100%;
+  }
+  .form-container .container .form-view-inner-container {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

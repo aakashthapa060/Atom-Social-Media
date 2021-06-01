@@ -3,11 +3,13 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import fields
 from django.forms.widgets import PasswordInput
+from django.contrib.auth.hashers import check_password
+
 User = get_user_model()
 
 unallowed_username = ['fuck', 'fuck123', 'bitch', 'yourdad', 'yourmom','suck']
 
-class LoginForm(forms.ModelForm):
+class LoginForm(forms.Form):
     username= forms.CharField()
     password = forms.CharField(
         widget=PasswordInput(
@@ -17,13 +19,25 @@ class LoginForm(forms.ModelForm):
             }
         )
     )
+    # def clean_password(self):
+    #     username = self.cleaned_data["username"]
+    #     password = self.cleaned_data["password"]
+    #     qs = User.objects.filter(username__iexact = username)
+    #     if qs.exists():
+    #         user= qs.first()
+    #         if check_password(password,user.password) == False:
+    #             raise forms.ValidationError("Password Incorrect")
+    #     return password
+
 
     def clean_username(self):
-        username = self.cleaned_data["username"]
+        username = self.cleaned_data.get("username",None)
+        print(username)
         qs = User.objects.filter(username__iexact = username)
-        if qs == None:
-            raise forms.ValidationError("Username Not Found, Please pick valid Username")
+        if not qs.exists():
+            raise forms.ValidationError("Invalid Username")
         return username
+        
 
 class RegisterForm(UserCreationForm):
     first_name = forms.CharField()
@@ -59,8 +73,8 @@ class RegisterForm(UserCreationForm):
         username = self.cleaned_data["username"]
         qs = User.objects.filter(username__iexact = username)
         if username in unallowed_username:
-
             raise forms.ValidationError("This username is restricted, Please pick another")
+
         if qs.exists():
             print("invalid username")
             raise forms.ValidationError(("This is an Invalid Username, Please pick another"))

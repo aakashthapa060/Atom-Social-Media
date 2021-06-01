@@ -8,10 +8,25 @@
     <title>Atom</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <!-- Jquery -->
-    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'scripts/jquery.js' %}"></script>
 </head>
 <body>
     {% block content %}
     {% endblock content %}
+    {% if messages %}
+    <div class="info-messages">
+        {% for message in messages %}
+        <div class="info-messages-container alert-{{message.tags }}">
+            <p>{{message}}</p>
+            <button class="info-warning-btn">close</button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 </body>
+    <script src="{% static 'scripts/layouts/info-banner.js' %}"></script>
+
+    <script src="{% static 'scripts/layouts/login.js' %}"></script>
+    {% block js %}
+    {% endblock js%}
 </html>

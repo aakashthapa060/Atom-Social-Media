@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login-form-container">
+    <div class="container">
+        <div class="login-form">
+            <div class="login-form-container">
+                <div class="login-form-title">
+                    <h2>Log In</h2>
+                </div>
+                {% if form.errors %}
+
+                <div class="login-error">
+                    {% for error in form.username.errors %}
+                        <p>{{error}}</p>
+                    {% endfor %}
+                    {% for error in form.password.errors %}
+                        <p>{{error}}</p>
+                    {% endfor %}
+                </div>
+
+                {% endif %}
+                <div class="actual-login-form">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="form-method">
+                            <div class="form-control">
+                                <input type="text" name="username" placeholder="username">
+                            </div>
+                            <div class="form-control login-password">
+                                <input type="password" name="password" placeholder="password">
+                            </div>
+                        </div>
+                        <div class="have-an-account-section">
+                            <a href="#">Sign up</a>
+                        </div>
+
+                        <div class="login-button">
+                            <button type="submit">Log in</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
