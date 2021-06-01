@@ -10,52 +10,60 @@
             position: relative;
             width: 270px;
             height: auto;
-            // border: 1px solid rgb(179, 179, 179);
-            // overflow: hidden;
             @include flexbox(center, row);
-            .login-form-container{
+
+            .login-form-container {
                 width: 260px;
                 height: auto;
                 @include flexbox(space-between, column);
-                .login-form-title{
+
+                .login-form-title {
                     width: auto;
                     height: auto;
                     text-align: center;
                     margin-bottom: 20px;
-                    h2{
+
+                    h2 {
                         font-family: $karla;
                         font-weight: 400;
                         font-size: 20px;
                         color: $dark-deep-blue-color;
                     }
                 }
-                .login-error{
+
+                .login-error {
                     width: 100%;
                     height: 25px;
                     background: rgba(255, 69, 69, 0.74);
-                    @include flexbox(center,row);
+                    @include flexbox(center, row);
                     margin-bottom: 10px;
                     border-radius: 5px;
                     border: 1px dashed rgb(255, 67, 67);
-                    p{
+
+                    p {
                         font-size: 14px;
                         font-family: $karla;
                         color: #fff;
                     }
                 }
-                .actual-login-form{
+
+                .actual-login-form {
                     width: 100%;
                     height: 100%;
                     height: auto;
-                    form{
+
+                    form {
                         width: 100%;
                         height: 100%;
-                        .form-method{
+
+                        .form-method {
                             margin-bottom: 10px;
-                            .form-control{
+
+                            .form-control {
                                 width: 100%;
                                 height: auto;
-                                input{
+
+                                input {
                                     width: 100%;
                                     padding: 7px 6px;
                                     font-size: 15px;
@@ -66,35 +74,42 @@
                                     transition: 0.5s ease;
                                     margin-bottom: 10px;
                                     font-family: $karla;
-                                    &:hover,&:focus{
+
+                                    &:hover,
+                                    &:focus {
                                         outline: none;
-                                        border-color:royalblue;
+                                        border-color: royalblue;
                                     }
                                 }
 
                             }
-                            .login-password{
-                                input{
-                                margin-bottom: 0;
+
+                            .login-password {
+                                input {
+                                    margin-bottom: 0;
                                 }
                             }
                         }
-                        .have-an-account-section{
+
+                        .have-an-account-section {
                             width: 100%;
                             height: auto;
                             margin-bottom: 20px;
-                            a{
+
+                            a {
                                 font-size: 13px;
                                 text-decoration: none;
                                 color: $dark-blue-color;
                             }
                         }
-                        .login-button{
+
+                        .login-button {
                             width: 100%;
                             height: 35px;
                             // border: 1px solid #000;
-                            @include flexbox(center,row);
-                            button{
+                            @include flexbox(center, row);
+
+                            button {
                                 width: 100%;
                                 height: 100%;
                                 background: $dark-blue-color;
@@ -104,6 +119,7 @@
                                 font-size: 14px;
                                 font-family: $karla;
                                 border-radius: 5px;
+                                cursor: pointer;
                             }
                         }
 

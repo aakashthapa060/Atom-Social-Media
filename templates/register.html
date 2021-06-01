@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="register-form-container">
+    <div class="container">
+        <div class="register-form">
+            <div class="register-form-inner-container">
+                <div class="register-form-title">
+                    <h2>Sign Up</h2>
+                </div>
+                <div class="actual-register-form">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                    {% if form.errors %}
+                        <div class="register-error">
+                            {% for error in form.username.errors %}
+                                <p>{{error}}</p>
+                            {% endfor %}
+                            {% for error in form.email.errors %}
+                            <p>{{error}}</p>
+                            {% endfor %}
+                            {% for error in form.password.errors %}
+                                <p>{{error}}</p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="form-control double-form-input">
+                            <input type="text" name="first_name" id="id_first_name" placeholder="firstname">
+                            <input type="text" name="last_name" id="id_last_name" placeholder="lastname">
+                            
+                        </div>
+                        <div class="form-control">
+                            <input type="text" name="username" autofocus="" required="" id="id_username" placeholder="username">
+                        </div>
+                        <div class="form-control">
+                            
+                            <input type="email" name="email" id="id_email" placeholder="email">
+                        </div>
+                        <div class="form-control">
+                            <input type="password" name="password1" class="form-control user-password1" id="user-password" required="" placeholder="password">
+                        </div>
+                        <div class="form-control">
+                            <input type="password" name="password2" class="form-control user-password2" id="user-password" required="" placeholder="confirm password">
+                        </div>
+                        <div class="have-an-account-section">
+                            <p>Already Have and<a href="{% url 'users:login_view' %}"> account?</a></p>
+                        </div>
+
+                        <div class="sign-up-button">
+                            <button>Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

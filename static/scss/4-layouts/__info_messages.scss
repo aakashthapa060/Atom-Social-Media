@@ -1,4 +1,4 @@
-.info-messages{
+.info-messages {
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -9,17 +9,20 @@
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     z-index: 2;
-    .info-messages-container{
+
+    .info-messages-container {
         width: 250px;
         height: 80px;
         @include flexbox(space-between, column);
         align-items: flex-start;
-        p{
+
+        p {
             font-size: 14px;
             font-family: $karla;
             // margin-bottom: 20px;
         }
-        button{
+
+        button {
             border: none;
             outline: none;
             font-family: $karla;
@@ -29,11 +32,13 @@
             border-radius: 5px;
         }
     }
-    .alert-warning{
-        p{
+
+    .alert-warning {
+        p {
             color: $orange-bright-color;
         }
-        button{
+
+        button {
             background: $orange-bright-color;
         }
     }

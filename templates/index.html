@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="form-container">
+<div class="form-choose-container">
     <div class="container">
-        <div class="form-view">
-            <div class="form-view-inner-container">
-                <div class="form-view-title">
-                    <h2>Welcome</h2>
-                    <p>By logging in you accept our <a href="#">Privacy Policy</a>  and <a href="">Terms of Service</a>.</p>
-                </div>
-                <div class="form-view-content">
-                    <div class="form-login-btn">
-                        <a href="#">Sign In</a>
-                    </div>
-                    <div class="form-register-btn">
-                        <a href="#">Sign Up</a>
-                    </div>
+        <div class="form-choose">
+            <div class="form-choose-inner-container">
+                <div class="form-choose-title">
+                    <h2>Welcome Back</h2>
 
                 </div>
+                <div class="actual-form-choose">
+                    <div class="login-form-option option">
+                        <a href="{% url 'users:login_view' %}">Sign In</a>
+                    </div>
+                    <div class="register-form-option option">
+                        <a href="{% url 'users:register_view'%}">Sign Up</a>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>

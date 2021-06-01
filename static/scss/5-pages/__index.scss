@@ -1,91 +1,75 @@
-// div{
-//     border: 1px solid $gray-lime-color;
-
-// }
-.form-container {
+.form-choose-container {
     width: 100%;
     height: 100vh;
 
     .container {
         height: 100%;
-        // @include flexbox(center, row);
+        @include flexbox(center, row);
 
-        // border: 1px solid #000;
-        .form-view {
-            width: 350px;
-            height: 400px;
-            background-color: #fff;
-            border-radius: 10px;
-            // border: 1px solid $gray-lime-color;
+        .form-choose {
+            width: 300px;
+            height: auto;
             @include flexbox(center, row);
 
-            &-inner-container {
-                width: 300px;
-                height: 350px;
+            .form-choose-inner-container {
+                width: 290px;
+                height: auto;
+                // border: 1px solid #000;
                 @include flexbox(space-between, column);
 
-                .form-view-title {
-                    width: auto;
+                .form-choose-title {
+                    width: 100%;
                     height: auto;
+                    text-align: center;
+                    margin-bottom: 30px;
 
                     h2 {
                         font-family: $karla;
-                        font-size: 30px;
-                        margin-bottom: 5px;
-                    }
-
-                    p {
-                        font-family: $karla;
-                        font-weight: 300;
-                        font-size: 15px;
-                        line-height: 20px;
-                        color: #4d4d4d;
-
-                        a {
-                            color: $dark-blue-color;
-                            text-decoration: none;
-                        }
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: $dark-deep-blue-color;
                     }
                 }
 
-                .form-view-content {
+                .actual-form-choose {
                     width: 100%;
-                    height: 150px;
-                    // border: 1px solid $gray-lime-color;
-                    @include flexbox(space-between, column);
+                    height: auto;
 
-                    div {
+                    .option {
                         width: 100%;
-                        height: 60px;
-                        // border: 1px solid $gray-lime-color;
+                        height: 30px;
+                        @include flexbox(center, row);
+                        margin-bottom: 20px;
 
                         a {
+                            font-size: 15px;
+                            text-decoration: none;
+                            font-family: $karla;
                             width: 100%;
                             height: 100%;
-                            border: 1px solid $gray-lime-color;
-
+                            background: $dark-deep-blue-color;
+                            color: #fff;
                             @include flexbox(center, row);
-                            text-decoration: none;
                             border-radius: 5px;
-                            color: $dark-deep-blue-color;
-                            font-family: $karla;
                             transition: 0.5s ease;
+
                             &:hover {
-                                background-color: #f7f5f5;
+                                background: $dark-blue-color;
                             }
                         }
-
                     }
                 }
 
-
-            }
-            @media only screen and (max-width: 380px){
-                &{
-                    width: 100%;
-                    &-inner-container{
+                @media only screen and (max-width: 310px) {
+                    & {
                         width: 90%;
                     }
+                }
+            }
+
+            @media only screen and (max-width: 310px) {
+                & {
+                    width: 100%;
                 }
             }
         }

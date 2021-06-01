@@ -505,6 +505,164 @@ body {
   font-size: 14px;
   font-family: "karla", sans-serif;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-form-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.register-form-container .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.register-form-container .container .register-form {
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.register-form-container .container .register-form .register-form-inner-container {
+  width: 280px;
+  height: auto;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .register-form-title {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .register-form-title h2 {
+  font-size: 20px;
+  color: #181a30;
+  font-family: "karla", sans-serif;
+  font-weight: 400;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .register-error {
+  width: 100%;
+  min-height: 25px;
+  background: rgba(255, 69, 69, 0.74);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px dashed #ff4343;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .register-error p {
+  font-size: 14px;
+  font-family: "karla", sans-serif;
+  color: #fff;
+  padding: 5px 2px;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form {
+  width: 100%;
+  height: auto;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form {
+  width: 100%;
+  height: auto;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .form-control {
+  width: 100%;
+  height: auto;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .form-control input {
+  width: 100%;
+  padding: 7px 6px;
+  font-size: 15px;
+  border: 0.5px solid #dfdfdf;
+  color: #3b3b3b;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.5s ease;
+  margin-bottom: 10px;
+  font-family: "karla", sans-serif;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .form-control input:hover, .register-form-container .container .register-form .register-form-inner-container .actual-register-form form .form-control input:focus {
+  outline: none;
+  border-color: royalblue;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .double-form-input {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .double-form-input input {
+  display: inline-block;
+  width: 49%;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .have-an-account-section {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .have-an-account-section p {
+  font-size: 14px;
+  font-family: "karla", sans-serif;
+  color: #181a30;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .have-an-account-section p a {
+  color: #5e4ccf;
+  text-decoration: none;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .sign-up-button {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.register-form-container .container .register-form .register-form-inner-container .actual-register-form form .sign-up-button button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: "karla", sans-serif;
+  background: #5e4ccf;
+  color: #fff;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 310px) {
+  .register-form-container .container .register-form .register-form-inner-container {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 310px) {
+  .register-form-container .container .register-form {
+    width: 100%;
+  }
 }
 
 .info-messages {
@@ -556,98 +714,95 @@ body {
   background: #ff3852;
 }
 
-.form-container {
+.form-choose-container {
   width: 100%;
   height: 100vh;
 }
 
-.form-container .container {
+.form-choose-container .container {
   height: 100%;
-}
-
-.form-container .container .form-view {
-  width: 350px;
-  height: 400px;
-  background-color: #fff;
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 
-.form-container .container .form-view-inner-container {
+.form-choose-container .container .form-choose {
   width: 300px;
-  height: 350px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.form-choose-container .container .form-choose .form-choose-inner-container {
+  width: 290px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
 
-.form-container .container .form-view-inner-container .form-view-title {
-  width: auto;
+.form-choose-container .container .form-choose .form-choose-inner-container .form-choose-title {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-choose-container .container .form-choose .form-choose-inner-container .form-choose-title h2 {
+  font-family: "karla", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #181a30;
+}
+
+.form-choose-container .container .form-choose .form-choose-inner-container .actual-form-choose {
+  width: 100%;
   height: auto;
 }
 
-.form-container .container .form-view-inner-container .form-view-title h2 {
-  font-family: "karla", sans-serif;
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-
-.form-container .container .form-view-inner-container .form-view-title p {
-  font-family: "karla", sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 20px;
-  color: #4d4d4d;
-}
-
-.form-container .container .form-view-inner-container .form-view-title p a {
-  color: #5e4ccf;
-  text-decoration: none;
-}
-
-.form-container .container .form-view-inner-container .form-view-content {
+.form-choose-container .container .form-choose .form-choose-inner-container .actual-form-choose .option {
   width: 100%;
-  height: 150px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-}
-
-.form-container .container .form-view-inner-container .form-view-content div {
-  width: 100%;
-  height: 60px;
-}
-
-.form-container .container .form-view-inner-container .form-view-content div a {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #e0e0e0;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.form-choose-container .container .form-choose .form-choose-inner-container .actual-form-choose .option a {
+  font-size: 15px;
   text-decoration: none;
-  border-radius: 5px;
-  color: #181a30;
   font-family: "karla", sans-serif;
+  width: 100%;
+  height: 100%;
+  background: #181a30;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 5px;
   transition: 0.5s ease;
 }
 
-.form-container .container .form-view-inner-container .form-view-content div a:hover {
-  background-color: #f7f5f5;
+.form-choose-container .container .form-choose .form-choose-inner-container .actual-form-choose .option a:hover {
+  background: #5e4ccf;
 }
 
-@media only screen and (max-width: 380px) {
-  .form-container .container .form-view {
-    width: 100%;
-  }
-  .form-container .container .form-view-inner-container {
+@media only screen and (max-width: 310px) {
+  .form-choose-container .container .form-choose .form-choose-inner-container {
     width: 90%;
+  }
+}
+
+@media only screen and (max-width: 310px) {
+  .form-choose-container .container .form-choose {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */
