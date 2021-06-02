@@ -1,17 +1,50 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atom</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <!-- Jquery -->
-    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'scripts/jquery.js' %}"></script>
 </head>
+
 <body>
+    <div class="main-loadar">
+        <div class="main-loader-container">
+            <div class="loder-item-1">
+
+            </div>
+            <div class="loder-item-2">
+
+            </div>
+        </div>
+    </div>
+    {% include 'nav.html' %}
     {% block content %}
     {% endblock content %}
+    {% if messages %}
+    <div class="info-messages">
+        {% for message in messages %}
+        <div class="info-messages-container alert-{{message.tags }}">
+            <p>{{message}}</p>
+            <button class="info-warning-btn">close</button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 </body>
+<script src="{% static 'scripts/layouts/loader.js' %}"></script>
+<script src="{% static 'scripts/layouts/navbar.js' %}"></script>
+<script src="{% static 'scripts/layouts/info-banner.js' %}"></script>
+
+<script src="{% static 'scripts/layouts/login_register.js' %}"></script>
+
+{% block js %}
+{% endblock js%}
+
 </html>

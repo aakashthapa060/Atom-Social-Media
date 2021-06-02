@@ -1,0 +1,78 @@
+.main-loadar{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: $white-lime-color;
+    z-index: 99;
+    @include flexbox(center,row);
+    .main-loader-container{
+        width: auto;
+        height: auto;
+        // border: 1px solid #000;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        .loder-item-1{
+            width: 10px;
+            height: 10px;
+            background: $dark-deep-blue-color;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: animateloader1 1s ease infinite;
+        }
+        .loder-item-2{
+            width: 10px;
+            height: 10px;
+            background: $dark-deep-blue-color;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            animation: animateloader2 1s ease infinite;
+        }
+        @keyframes animateloader1 {
+            0%{
+                top: 0;
+                left: 0;
+            }
+            25%{
+                top: 10px;
+                left: 0;
+                
+            }
+            50%{
+                top: 10px;
+                left: 10px;
+                background: $dark-blue-color;
+
+            }
+            75%{
+                top: 0;
+                left: 10px;
+                background: $dark-blue-color;
+            }
+        }
+        @keyframes animateloader2 {
+            0%{
+                bottom: 0;
+                right: 0;
+            }
+            25%{
+                bottom: 10px;
+                right: 0;
+                
+
+            }
+            50%{
+                bottom: 10px;
+                right: 10px;
+                background: $dark-blue-color;
+
+            }
+            75%{
+                bottom: 0;
+                right: 10px;
+            }
+        }
+    }
+}

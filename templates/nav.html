@@ -1,0 +1,32 @@
+{% load static %}
+<nav class="nav-bar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <h2><a href="#">A<span>tom</span></a></h2>
+        </div>
+        <div class="nav-links">
+            <div class="nav-message-box">
+                <img src="{% static 'img/icons/direct.svg' %}" alt="">
+            </div>
+            <div class="profile-info-img">
+                <div class="inner-profile-img-container">
+                    <img src="{{request.user.profile.profile_pic.url}}" alt="">
+                </div>
+            </div>
+            <div class="nav-links-section">
+                <div class="nav-links-section-container">
+                    <ul>
+                        <li><a href="#">Profile</a></li>
+
+                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="#">Edit Profile Picture</a></li>
+
+                        <li><a href="#">My Likes</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                        <li><a href="{% url 'users:logout_view' %}"> <img src="{% static 'img/icons/logout.svg'%}" width="20px" alt=""> Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
