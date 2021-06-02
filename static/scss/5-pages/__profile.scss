@@ -1,0 +1,136 @@
+.profile-container{
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+
+    .profile-section-main{
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 50px;
+        display: grid;
+        grid-template-columns: 650px 300px;
+        grid-template-rows: 2fr;
+        grid-gap: 50px;
+        div{
+            // border: 1px solid #696969;
+        }
+        .profile-section{
+            width: 100%;
+            height: auto;
+            .profile-main-part{
+                background: #fff;
+                width: 100%;
+                height: 350px;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+                .profile-part-cover-img{
+                    width: 100%;
+                    height: 200px;
+                    // border: 1px solid #000;
+                    // border-radius: 20px;
+                    overflow: hidden;
+                    @include flexbox(center, row);
+                    img{
+                        width: 110%;
+                    }
+                }
+                .profile-info-part{
+                    width: 100%;
+                    height: 150px;
+                    // border: 1px solid #000;
+                    .profile-info-container{
+                        position: relative;
+                        display: flex;
+                        width: 95%;
+                        height: 180px;
+                        margin: 0 auto;
+                        // border: 1px solid #000;
+                        .profile-pic{
+                            float: left;
+                            position: relative;
+                            top: -60px;
+                            width: 130px;
+                            height: 130px;
+                            background: #fff;
+                            border-radius: 50%;
+                            margin-right: 20px;
+                            @include flexbox(center, row);
+                            .img{
+                                width: 120px;
+                                height: 120px;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                background: #fff;
+                                img{
+                                    width: 130px;
+                                }
+                            }
+                        }
+                        .profile-user-info{
+                            display: inline;
+                            position: relative;
+                            top: 20px;
+                            h2{
+                                font-family: $karla;
+                                font-size: 22px;
+                                margin-bottom: 5px;
+                            }
+                            .user-profile-username{
+                                font-family: $karla;
+                                color: #acacac;
+                                margin-bottom: 15px;
+                            }
+                            .social-media-icons{
+                                width: auto;
+                                height: auto;
+                                a{
+                                    img{
+                                        width: 20px;
+                                        background: #fff;
+                                    }
+                                }
+                            }
+                        }
+                        .follow-unfollow{
+                            position: absolute;
+                            width: auto;
+                            height: auto;
+                            right: 0px;
+                            bottom: 50px;
+                            a{
+                                padding: 8px 25px;
+                                background-color: $dark-blue-color;
+                                color: #fff;
+                                border-radius: 5px;
+                                img{
+                                    width: 10px;
+                                }
+                            }
+                            .profile-setting-btn{
+                                position: relative;
+                                &::after{
+                                    content: 'Settings';
+                                    position: absolute;
+                                    width: auto;
+                                    padding: 4px 6px;
+                                    height: auto;
+                                    background-color: rgb(39, 39, 39);
+                                    top: -25px;
+                                    left: -5px;
+                                    border-radius: 5px;
+                                    display: none;
+                                }
+                                &:hover::after{
+                                    display: block;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+<div class="profile-container">
+    <div class="profile-section-main">
+        <div class="profile-section">
+            <div class="profile-main-part">
+                <div class="profile-part-cover-img">
+                    <img src="" class = "profile-cover-img" alt="random Image">
+                </div>
+                <div class="profile-info-part">
+                    <div class="profile-info-container">
+                        <div class="profile-pic">
+                            <div class="img">
+                                <img src="{{get_user.profile.profile_pic.url}}" alt="">
+                            </div>
+                        </div>
+                        <div class="profile-user-info">
+                            <h2>{{get_user.first_name}} {{get_user.last_name}}</h2>
+                            <p class="user-profile-username">@{{get_user.username}}</p>
+                            <div class="social-media-icons">
+                                {% if get_user.profile.socialmedialink.facebook_link %}
+                                <a href="{{get_user.profile.socialmedialink.facebook_link}}" target="_blank"><img src="{% static 'img/icons/facebook.svg' %}" alt=""></a>
+                                {% endif %}
+                                {% if get_user.profile.socialmedialink.instagram_link %}
+
+                                <a href="{{get_user.profile.socialmedialink.instagram_link}}" target="_blank"><img src="{% static 'img/icons/instagram.svg' %}" alt=""></a>
+                                {% endif %}
+                                {% if get_user.profile.socialmedialink.twitter_link %}
+
+                                <a href="{{get_user.profile.socialmedialink.twitter_link}}" target="_blank"><img src="{% static 'img/icons/twitter-sign.svg' %}" alt=""></a>
+                                {% endif %}
+
+                                {% if get_user.profile.socialmedialink.github_link %}
+
+                                <a href="{{get_user.profile.socialmedialink.github_link}}" target="_blank"><img src="{% static 'img/icons/github.svg' %}" alt=""></a>
+                                {% endif %}
+
+
+                            </div>
+                        </div>
+
+                        {% if request.user == get_user %}
+                        <div class="follow-unfollow">
+                            <a href="#">change profile</a>
+                            <a href="#" class="profile-setting-btn"><img src="{% static 'img/icons/setting.svg' %}"
+                                    alt=""></a>
+                        </div>
+                        {% else %}
+                        <div class="follow-unfollow">
+                            <a href="#">follow</a>
+                            <a href="#">message</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info-section">
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'scripts/layouts/profile.js' %}"></script>
+
+{% endblock js%}

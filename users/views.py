@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from .forms import RegisterForm, LoginForm
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate,logout
@@ -17,7 +17,7 @@ def index(request):
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect("posts:main_section")
+        return redirect("posts:main_view")
     else:
         form = LoginForm()
         if request.method == "POST":
@@ -37,12 +37,12 @@ def login_view(request):
         context = {
             "form": form
         }
-        return render(request, "login.html", context)
+        return render(request, "users/login.html", context)
 
 
 def register_view(request):
     if request.user.is_authenticated:
-        return redirect("posts:main_section")
+        return redirect("posts:main_view")
     else:
         form = RegisterForm()
         if request.method == "POST":
@@ -61,10 +61,20 @@ def register_view(request):
         context = {
             "form":form
         }
-        return render(request,"register.html", context)
+        return render(request,"users/register.html", context)
 
 @login_required(login_url="users:login_view")
 def logout_view(request):
     logout(request)
     messages.success(request,"Logged Out successfully")
     return redirect("users:login_view")
+
+
+
+def profile_view(request, username):
+    get_user = get_object_or_404(User, username = username)
+    
+    context = {
+        "get_user": get_user
+    }
+    return render(request, "users/profile.html", context)

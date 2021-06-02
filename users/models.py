@@ -79,3 +79,23 @@ class Profile(models.Model):
             img.thumbnail((400, 400))
 
         img.save(self.profile_pic.path)
+
+
+class SocialMediaLink(models.Model):
+    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
+    instagram_link = models.URLField(max_length=200, null=True, blank=True)
+    facebook_link = models.URLField(max_length=200, null=True, blank=True)
+    twitter_link = models.URLField(max_length=200, null=True, blank=True)
+    github_link = models.URLField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.profile} links"
+    
+    @receiver(post_save, sender= Profile)
+    def create_social_media_link(sender, instance, created, **kwargs):
+        if created:
+            SocialMediaLink.objects.create(profile = instance)
+
+    @receiver(post_save, sender = Profile)
+    def save_social_meida_link(sender,instance, **kwargs):
+        instance.socialmedialink.save()
