@@ -10,14 +10,13 @@
         top: 50px;
         display: grid;
         grid-template-columns: 650px 300px;
-        grid-template-rows: 2fr;
+        grid-template-rows: 1fr;
         grid-gap: 50px;
-        div{
-            // border: 1px solid #696969;
-        }
         .profile-section{
+            transition: 0.5s ease;
             width: 100%;
             height: auto;
+
             .profile-main-part{
                 background: #fff;
                 width: 100%;
@@ -25,6 +24,8 @@
                 border-radius: 20px;
                 overflow: hidden;
                 box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+                margin-bottom: 30px;
+
                 .profile-part-cover-img{
                     width: 100%;
                     height: 200px;
@@ -131,6 +132,164 @@
                     }
                 }
             }
+            .aboutMeSection{
+                width: 100%;
+                height: auto;
+                background-color: #fff;
+                @include flexbox(center, row);
+                border-radius: 20px;
+                box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+
+                .aboutMeSection-Container{
+                    width: 95%;
+                    min-height: 100px;
+                    .aboutMeTitle{
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+
+                        h2{
+                            font-size: 22px;
+                            font-family: $karla;
+                            color: $dark-deep-blue-color;
+                        }
+                    }
+                    .userFollowFolowing{
+                        width: auto;
+                        margin-bottom: 30px;
+
+                        p{
+                            display: inline-block;
+                            font-size: 14px;
+                            cursor: pointer;
+                            color: #8a8a8a;
+                        }
+                        .user_followers{
+                            margin-left: 10px;
+                        }
+                    }
+                    .aboutMeBio{
+                        width: 100%;
+                        height: auto;
+                        font-family: $karla;
+                        color: #acacac;
+                        margin-bottom: 10px;
+                        p{
+                            font-size: 15px;
+                            color: $dark-deep-blue-color;
+                        }
+                    }
+                }
+            }
+        }
+        .info-section{
+            transition: 1s ease;
+
+            // width: 100%;
+            height: auto;
+            .user-social-media-link{
+                width: 100%;
+                height: auto;
+                background-color: #fff;
+                // border: 1px solid #000;
+                border-radius: 20px;
+                box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+                margin-bottom: 30px;
+
+                @include flexbox(center, row);
+                .user-social-media-container{
+                    width: 90%;
+                    // border: 1px solid #000;
+                    min-height: 100px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                    .user-social-media-title{
+                        font-family: $karla;
+                        width: auto;
+                        margin-bottom: 20px;
+                        height: auto;
+                        h2{
+                            font-size: 20px;
+                            color: $dark-deep-blue-color;
+                            
+                        }
+                    }
+                    .user-socail-medias{
+                        width: auto;
+                        height: auto;
+                        a{
+                            display: flex;
+                            // justify-content: center;
+                            margin-bottom: 10px;
+                            align-items: center;
+                            img{
+                                width: 20px;
+                                margin-right: 10px;
+                            }
+                            p{
+                                font-weight: 600;
+                            }
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                        
+                    }
+                }
+
+            }
+            .user-recentPosts{
+                width: 100%;
+                min-height: auto;
+                background-color: #fff;
+                box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+                border-radius: 20px;
+                @include flexbox(center,row);
+                &-container{
+                    width: 90%;
+                    min-height: 100px;
+                    margin: 15px 0px;
+                    @include flexbox(space-between,column);
+                    align-items: flex-start;
+                    .user-recentPost-title{
+                        width: auto;
+                        height: auto;
+                        font-family: $karla;
+                        h2{
+                            font-size: 20px;
+                        }
+
+                    }
+                    .user-posts-all{
+                        width: 100%;
+                        @include flexbox(center,row);
+                        h2{
+                            font-size: 20px;
+                            color: #acacac;
+                        }
+                    }
+
+                }
+            }
+            @media only screen and (max-width: 1050px){
+                &{
+                    display: none;
+                }
+            }
+        }
+        @media only screen and (max-width: 1050px){
+            &{
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+    @media only screen and (max-width: 1050px){
+        &{
+            width: 700px;
+        }
+    }
+    @media only screen and (max-width: 750px){
+        &{
+            width: 90%;
         }
     }
 }

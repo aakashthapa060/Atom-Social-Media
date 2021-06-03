@@ -55,9 +55,66 @@
                     </div>
                 </div>
             </div>
+            <!-- Div About Me -->
+            <div class="aboutMeSection">
+                <div class="aboutMeSection-Container">
+                    {% if request.user == get_user %}
+                    <div class="aboutMeTitle">
+                        <h2>About Me</h2>
+                    </div>
+                    {% else %}
+                    <div class="aboutMeTitle">
+                        <h2>About {{get_user.first_name}}</h2>
+                    </div>
+                    {% endif %}
+                    <div class="userFollowFolowing">
+                        <p class="user_following"> <strong>0</strong> Following</p>
+                        <p class="user_followers"><strong>0</strong> Followers</p>
+                    </div>
+                    <div class="aboutMeBio">
+                        <p>{{get_user.profile.user_bio}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="info-section">
+            <div class="user-social-media-link">
+                <div class="user-social-media-container">
+                    <div class="user-social-media-title">
+                        <h2>Connect</h2>
+                    </div>
+                    <div class="user-socail-medias">
+                        {% if get_user.profile.socialmedialink.facebook_link %}
+                        <a href="{{get_user.profile.socialmedialink.facebook_link}}" target="_blank"><img src="{% static 'img/icons/facebook.svg' %}" alt=""><p>Facebook</p></a>
+                        {% endif %}
+                        {% if get_user.profile.socialmedialink.instagram_link %}
 
+                        <a href="{{get_user.profile.socialmedialink.instagram_link}}" target="_blank"><img src="{% static 'img/icons/instagram.svg' %}" alt=""><p>Instagram</p></a>
+                        {% endif %}
+                        {% if get_user.profile.socialmedialink.twitter_link %}
+
+                        <a href="{{get_user.profile.socialmedialink.twitter_link}}" target="_blank"><img src="{% static 'img/icons/twitter-sign.svg' %}" alt=""><p>Twitter</p></a>
+                        {% endif %}
+
+                        {% if get_user.profile.socialmedialink.github_link %}
+
+                        <a href="{{get_user.profile.socialmedialink.github_link}}" target="_blank"><img src="{% static 'img/icons/github.svg' %}" alt=""><p>Github</p></a>
+                        {% endif %}
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="user-recentPosts">
+                <div class="user-recentPosts-container">
+                    <div class="user-recentPost-title">
+                        <h2>Recent Posts</h2>
+                    </div>
+                    <div class="user-posts-all">
+                        <h2>Nothing to Show</h2>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

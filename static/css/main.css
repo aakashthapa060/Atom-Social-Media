@@ -1082,11 +1082,12 @@ a {
   top: 50px;
   display: grid;
   grid-template-columns: 650px 300px;
-  grid-template-rows: 2fr;
+  grid-template-rows: 1fr;
   grid-gap: 50px;
 }
 
 .profile-container .profile-section-main .profile-section {
+  transition: 0.5s ease;
   width: 100%;
   height: auto;
 }
@@ -1098,6 +1099,7 @@ a {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+  margin-bottom: 30px;
 }
 
 .profile-container .profile-section-main .profile-section .profile-main-part .profile-part-cover-img {
@@ -1220,5 +1222,193 @@ a {
 
 .profile-container .profile-section-main .profile-section .profile-main-part .profile-info-part .profile-info-container .follow-unfollow .profile-setting-btn:hover::after {
   display: block;
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection .aboutMeSection-Container {
+  width: 95%;
+  min-height: 100px;
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection .aboutMeSection-Container .aboutMeTitle {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection .aboutMeSection-Container .aboutMeTitle h2 {
+  font-size: 22px;
+  font-family: "karla", sans-serif;
+  color: #181a30;
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection .aboutMeSection-Container .userFollowFolowing {
+  width: auto;
+  margin-bottom: 30px;
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection .aboutMeSection-Container .userFollowFolowing p {
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  color: #8a8a8a;
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection .aboutMeSection-Container .userFollowFolowing .user_followers {
+  margin-left: 10px;
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection .aboutMeSection-Container .aboutMeBio {
+  width: 100%;
+  height: auto;
+  font-family: "karla", sans-serif;
+  color: #acacac;
+  margin-bottom: 10px;
+}
+
+.profile-container .profile-section-main .profile-section .aboutMeSection .aboutMeSection-Container .aboutMeBio p {
+  font-size: 15px;
+  color: #181a30;
+}
+
+.profile-container .profile-section-main .info-section {
+  transition: 1s ease;
+  height: auto;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link .user-social-media-container {
+  width: 90%;
+  min-height: 100px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link .user-social-media-container .user-social-media-title {
+  font-family: "karla", sans-serif;
+  width: auto;
+  margin-bottom: 20px;
+  height: auto;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link .user-social-media-container .user-social-media-title h2 {
+  font-size: 20px;
+  color: #181a30;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link .user-social-media-container .user-socail-medias {
+  width: auto;
+  height: auto;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link .user-social-media-container .user-socail-medias a {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link .user-social-media-container .user-socail-medias a img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link .user-social-media-container .user-socail-medias a p {
+  font-weight: 600;
+}
+
+.profile-container .profile-section-main .info-section .user-social-media-link .user-social-media-container .user-socail-medias a:last-child {
+  margin-bottom: 0;
+}
+
+.profile-container .profile-section-main .info-section .user-recentPosts {
+  width: 100%;
+  min-height: auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.profile-container .profile-section-main .info-section .user-recentPosts-container {
+  width: 90%;
+  min-height: 100px;
+  margin: 15px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-container .profile-section-main .info-section .user-recentPosts-container .user-recentPost-title {
+  width: auto;
+  height: auto;
+  font-family: "karla", sans-serif;
+}
+
+.profile-container .profile-section-main .info-section .user-recentPosts-container .user-recentPost-title h2 {
+  font-size: 20px;
+}
+
+.profile-container .profile-section-main .info-section .user-recentPosts-container .user-posts-all {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.profile-container .profile-section-main .info-section .user-recentPosts-container .user-posts-all h2 {
+  font-size: 20px;
+  color: #acacac;
+}
+
+@media only screen and (max-width: 1050px) {
+  .profile-container .profile-section-main .info-section {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .profile-container .profile-section-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .profile-container {
+    width: 700px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .profile-container {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
