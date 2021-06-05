@@ -34,6 +34,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete= models.CASCADE)
     profile_pic = models.ImageField(default = "default.jpg", upload_to = "profile_picture", blank = True,null = True)
     user_bio = models.TextField(validators = [MaxLengthValidator(300)], default= random_quote(), null = True, blank=True)
+    following = models.ManyToManyField(User, related_name="following",blank = True)
+    follower = models.ManyToManyField(User, related_name="follower",blank = True)
 
     @receiver(post_save,sender = User)
     def create_user_profile(sender,instance, created, **kwargs):
@@ -44,6 +46,12 @@ class Profile(models.Model):
     def save_user_profile(sender,instance,**kwargs):
         instance.profile.save()
     
+    def following_count(self):
+        return self.following.count()
+    
+        
+    def follower_count(self):
+        return self.follower.count()
 
     def __str__(self):
         return f"{self.user} / profile"

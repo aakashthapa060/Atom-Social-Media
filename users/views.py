@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .forms import RegisterForm, LoginForm
+from .forms import RegisterForm, LoginForm, User_Edit_Form, Profile_Edit_Form
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate,logout
 from django.contrib import messages
@@ -73,8 +73,48 @@ def logout_view(request):
 
 def profile_view(request, username):
     get_user = get_object_or_404(User, username = username)
-    
+    active_user = request.user
+    if request.user == get_user:
+        followed = "user"
+    else:
+        if active_user in get_user.profile.follower.all() and get_user in active_user.profile.following.all():
+            followed = True
+        else:
+            followed = False
+
     context = {
-        "get_user": get_user
+        "get_user": get_user,
+        "followed": followed
     }
     return render(request, "users/profile.html", context)
+
+
+
+def follow_unfollow(request, username):
+    get_user = get_object_or_404(User, username = username)
+    active_user = request.user
+    if active_user in get_user.profile.follower.all() and get_user in active_user.profile.following.all():
+        followed = False
+        active_user.profile.following.remove(get_user)
+        get_user.profile.follower.remove(active_user)
+    else:
+        followed = True
+        active_user.profile.following.add(get_user)
+        get_user.profile.follower.add(active_user)
+    data = {
+        "followed": followed
+    }
+    return redirect("users:profile_view", username = username)
+
+
+
+def user_edit_view(request):
+    active_user = request.user
+    user_form = User_Edit_Form(instance= active_user)
+    profile_form = Profile_Edit_Form(instance=active_user.profile)
+
+    context = {
+        "user_form": user_form,
+        "profile_form": profile_form
+    }
+    return render(request, "users/profile.html",context)

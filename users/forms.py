@@ -1,10 +1,10 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-from django.forms import fields
+from django.forms import fields, models
 from django.forms.widgets import PasswordInput
 from django.contrib.auth.hashers import check_password
-
+from .models import Profile
 User = get_user_model()
 
 unallowed_username = ['fuck', 'fuck123', 'bitch', 'yourdad', 'yourmom','suck']
@@ -98,3 +98,35 @@ class RegisterForm(UserCreationForm):
         return password1
 
 
+
+class Profile_Edit_Form(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ("profile_pic", "user_bio")
+
+
+class User_Edit_Form(forms.ModelForm):
+    first_name = forms.CharField(widget= forms.TextInput(
+        attrs= {
+            "placeholder": "firstname"
+        }
+    ))
+    last_name = forms.CharField(widget= forms.TextInput(
+        attrs= {
+            "placeholder": "lastname"
+        }
+    ))
+    username = forms.CharField(widget= forms.TextInput(
+        attrs= {
+            "placeholder": "username"
+        }
+    ))
+    email = forms.EmailField(widget= forms.TextInput(
+        attrs= {
+            "placeholder": "email"
+        }
+    ))
+
+    class Meta:
+        model = User
+        fields = ("first_name", "last_name", "username", "email")

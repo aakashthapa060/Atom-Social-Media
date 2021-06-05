@@ -6,7 +6,7 @@
         <div class="profile-section">
             <div class="profile-main-part">
                 <div class="profile-part-cover-img">
-                    <img src="" class = "profile-cover-img" alt="random Image">
+                    <img src="" class="profile-cover-img" alt="random Image">
                 </div>
                 <div class="profile-info-part">
                     <div class="profile-info-container">
@@ -20,20 +20,24 @@
                             <p class="user-profile-username">@{{get_user.username}}</p>
                             <div class="social-media-icons">
                                 {% if get_user.profile.socialmedialink.facebook_link %}
-                                <a href="{{get_user.profile.socialmedialink.facebook_link}}" target="_blank"><img src="{% static 'img/icons/facebook.svg' %}" alt=""></a>
+                                <a href="{{get_user.profile.socialmedialink.facebook_link}}" target="_blank"><img
+                                        src="{% static 'img/icons/facebook.svg' %}" alt=""></a>
                                 {% endif %}
                                 {% if get_user.profile.socialmedialink.instagram_link %}
 
-                                <a href="{{get_user.profile.socialmedialink.instagram_link}}" target="_blank"><img src="{% static 'img/icons/instagram.svg' %}" alt=""></a>
+                                <a href="{{get_user.profile.socialmedialink.instagram_link}}" target="_blank"><img
+                                        src="{% static 'img/icons/instagram.svg' %}" alt=""></a>
                                 {% endif %}
                                 {% if get_user.profile.socialmedialink.twitter_link %}
 
-                                <a href="{{get_user.profile.socialmedialink.twitter_link}}" target="_blank"><img src="{% static 'img/icons/twitter-sign.svg' %}" alt=""></a>
+                                <a href="{{get_user.profile.socialmedialink.twitter_link}}" target="_blank"><img
+                                        src="{% static 'img/icons/twitter-sign.svg' %}" alt=""></a>
                                 {% endif %}
 
                                 {% if get_user.profile.socialmedialink.github_link %}
 
-                                <a href="{{get_user.profile.socialmedialink.github_link}}" target="_blank"><img src="{% static 'img/icons/github.svg' %}" alt=""></a>
+                                <a href="{{get_user.profile.socialmedialink.github_link}}" target="_blank"><img
+                                        src="{% static 'img/icons/github.svg' %}" alt=""></a>
                                 {% endif %}
 
 
@@ -42,13 +46,20 @@
 
                         {% if request.user == get_user %}
                         <div class="follow-unfollow">
-                            <a href="#">change profile</a>
+                            <a href="{% url 'users:user_edit' %}">change profile</a>
                             <a href="#" class="profile-setting-btn"><img src="{% static 'img/icons/setting.svg' %}"
                                     alt=""></a>
                         </div>
                         {% else %}
                         <div class="follow-unfollow">
-                            <a href="#">follow</a>
+                            <form action="{% url 'users:follow_unfollow' get_user %}" method="POST">
+                                {% csrf_token %}
+                                {% if followed %}
+                                <button class="follow_unfollow_btn">Unfollow</button>
+                                {% else %}
+                                <button class="follow_unfollow_btn">Follow</button>
+                                {% endif %}
+                            </form>
                             <a href="#">message</a>
                         </div>
                         {% endif %}
@@ -65,11 +76,12 @@
                     {% else %}
                     <div class="aboutMeTitle">
                         <h2>About {{get_user.first_name}}</h2>
+
                     </div>
                     {% endif %}
                     <div class="userFollowFolowing">
-                        <p class="user_following"> <strong>0</strong> Following</p>
-                        <p class="user_followers"><strong>0</strong> Followers</p>
+                        <p class="user_following"> <strong>{{get_user.profile.following_count}}</strong> Following</p>
+                        <p class="user_followers"><strong>{{get_user.profile.follower_count}}</strong> Followers</p>
                     </div>
                     <div class="aboutMeBio">
                         <p>{{get_user.profile.user_bio}}</p>
@@ -85,20 +97,32 @@
                     </div>
                     <div class="user-socail-medias">
                         {% if get_user.profile.socialmedialink.facebook_link %}
-                        <a href="{{get_user.profile.socialmedialink.facebook_link}}" target="_blank"><img src="{% static 'img/icons/facebook.svg' %}" alt=""><p>Facebook</p></a>
+                        <a href="{{get_user.profile.socialmedialink.facebook_link}}" target="_blank"><img
+                                src="{% static 'img/icons/facebook.svg' %}" alt="">
+                            <p>Facebook</p>
+                        </a>
                         {% endif %}
                         {% if get_user.profile.socialmedialink.instagram_link %}
 
-                        <a href="{{get_user.profile.socialmedialink.instagram_link}}" target="_blank"><img src="{% static 'img/icons/instagram.svg' %}" alt=""><p>Instagram</p></a>
+                        <a href="{{get_user.profile.socialmedialink.instagram_link}}" target="_blank"><img
+                                src="{% static 'img/icons/instagram.svg' %}" alt="">
+                            <p>Instagram</p>
+                        </a>
                         {% endif %}
                         {% if get_user.profile.socialmedialink.twitter_link %}
 
-                        <a href="{{get_user.profile.socialmedialink.twitter_link}}" target="_blank"><img src="{% static 'img/icons/twitter-sign.svg' %}" alt=""><p>Twitter</p></a>
+                        <a href="{{get_user.profile.socialmedialink.twitter_link}}" target="_blank"><img
+                                src="{% static 'img/icons/twitter-sign.svg' %}" alt="">
+                            <p>Twitter</p>
+                        </a>
                         {% endif %}
 
                         {% if get_user.profile.socialmedialink.github_link %}
 
-                        <a href="{{get_user.profile.socialmedialink.github_link}}" target="_blank"><img src="{% static 'img/icons/github.svg' %}" alt=""><p>Github</p></a>
+                        <a href="{{get_user.profile.socialmedialink.github_link}}" target="_blank"><img
+                                src="{% static 'img/icons/github.svg' %}" alt="">
+                            <p>Github</p>
+                        </a>
                         {% endif %}
 
 

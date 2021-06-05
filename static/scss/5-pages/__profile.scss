@@ -100,6 +100,22 @@
                             height: auto;
                             right: 0px;
                             bottom: 50px;
+                            form{
+                                width: auto;
+                                height: auto;
+                                display: inline-block;
+                                button{
+                                    padding: 8px 25px;
+                                    background-color: $dark-blue-color;
+                                    color: #fff;
+                                    border-radius: 5px;
+                                    outline: none;
+                                    border:none;
+                                    font-family: $karla;
+                                    font-size: 14px;
+                                    cursor: pointer;
+                                }
+                            }
                             a{
                                 padding: 8px 25px;
                                 background-color: $dark-blue-color;
