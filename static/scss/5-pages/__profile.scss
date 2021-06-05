@@ -1,9 +1,153 @@
-.profile-container{
+.profile-edit {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.26);
+    z-index: 5;
+    top: 0;
+    left: 0;
+
+    .profile-form {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        width: 500px;
+        height: 450px;
+        @include flexbox(center, row);
+        border-radius: 20px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-width: 10px;          /* "auto" or "thin" */
+        scrollbar-color: rgb(190, 190, 190) #fff;
+
+        &::-webkit-scrollbar {
+            width: 1em;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(190, 190, 190);
+            // outline: 1px solid slategrey;
+          }
+
+        &-container {
+            width: 450px;
+            height: 400px;
+
+            .profile-form-title {
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                // position: fixed;
+
+                h2 {
+                    font-size: 24px;
+                    font-family: $karla;
+                    color: $dark-deep-blue-color;
+                }
+                a{
+                    padding: 4px 16px;
+                    background: $orange-bright-color;
+                    color: #fff;
+                }
+            }
+
+            .actual-profile-form {
+                width: 100%;
+                height: auto;
+
+                form {
+                    width: 100%;
+                    height: 100%;
+
+                    .form-control {
+                        width: 100%;
+                        margin-bottom: 10px;
+                        font-family: $karla;
+                        p{
+                            color: #8a8a8a;
+                            margin-bottom: 3px;
+                            font-size: 14px;
+
+                        }
+                        input,textarea {
+                            width: 100%;
+                            border: 1px solid #dfdfdf;
+                            outline: none;
+                            padding: 7px;
+                            border-radius: 5px;
+                            color: $dark-deep-blue-color;
+                            font-family: 14px;
+                            
+                        }
+                        textarea{
+                            // min-height: 20px;
+                            resize: vertical;
+                            max-height: 200px;
+                            min-height: 100px;
+                            height: 100px;
+                        }
+                    }
+                    .double-item{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 10px;
+                        @media only screen and (max-width: 400px){
+                            &{
+                                grid-template-columns: 1fr;
+                                grid-template-rows: 1fr 1fr;
+                            }
+                        }
+                    }
+                    .buttons{
+                        margin-bottom: 20px;
+                        button{
+                            padding: 7px 20px;
+                            outline: none;
+                            border:none;
+                            background: $dark-blue-color;
+                            color: #fff;
+                            font-size: 14px;
+                            font-family: $karla;
+                            margin-right: 5px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                        a{
+                            cursor: pointer;
+                        }
+
+                    }
+                }
+            }
+            @media only screen and (max-width: 550px){
+                &{
+                    width: 90%;
+                }
+            }
+        }
+        @media only screen and (max-width: 550px){
+            &{
+                width: 90%;
+            }
+        }
+    }
+}
+
+
+.profile-container {
     position: relative;
     width: 1000px;
     margin: 0 auto;
 
-    .profile-section-main{
+    // background: red;
+    div {
+        border: 1px solid #000;
+    }
+
+    .profile-section-main {
         width: 100%;
         height: auto;
         position: relative;
@@ -12,12 +156,17 @@
         grid-template-columns: 650px 300px;
         grid-template-rows: 1fr;
         grid-gap: 50px;
-        .profile-section{
+        @media only screen and (max-width: 550px){
+            &{
+                width: 90%;
+            }
+        }
+        .profile-section {
             transition: 0.5s ease;
             width: 100%;
             height: auto;
 
-            .profile-main-part{
+            .profile-main-part {
                 background: #fff;
                 width: 100%;
                 height: 350px;
@@ -26,29 +175,33 @@
                 box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
                 margin-bottom: 30px;
 
-                .profile-part-cover-img{
+                .profile-part-cover-img {
                     width: 100%;
                     height: 200px;
                     // border: 1px solid #000;
                     // border-radius: 20px;
                     overflow: hidden;
                     @include flexbox(center, row);
-                    img{
+
+                    img {
                         width: 110%;
                     }
                 }
-                .profile-info-part{
+
+                .profile-info-part {
                     width: 100%;
                     height: 150px;
+
                     // border: 1px solid #000;
-                    .profile-info-container{
+                    .profile-info-container {
                         position: relative;
                         display: flex;
                         width: 95%;
                         height: 180px;
                         margin: 0 auto;
+
                         // border: 1px solid #000;
-                        .profile-pic{
+                        .profile-pic {
                             float: left;
                             position: relative;
                             top: -60px;
@@ -58,76 +211,90 @@
                             border-radius: 50%;
                             margin-right: 20px;
                             @include flexbox(center, row);
-                            .img{
+
+                            .img {
                                 width: 120px;
                                 height: 120px;
                                 border-radius: 50%;
                                 overflow: hidden;
                                 background: #fff;
-                                img{
+
+                                img {
                                     width: 130px;
                                 }
                             }
                         }
-                        .profile-user-info{
+
+                        .profile-user-info {
                             display: inline;
                             position: relative;
                             top: 20px;
-                            h2{
+
+                            h2 {
                                 font-family: $karla;
                                 font-size: 22px;
                                 margin-bottom: 5px;
                             }
-                            .user-profile-username{
+
+                            .user-profile-username {
                                 font-family: $karla;
                                 color: #acacac;
                                 margin-bottom: 15px;
                             }
-                            .social-media-icons{
+
+                            .social-media-icons {
                                 width: auto;
                                 height: auto;
-                                a{
-                                    img{
+
+                                a {
+                                    img {
                                         width: 20px;
                                         background: #fff;
                                     }
                                 }
                             }
                         }
-                        .follow-unfollow{
+
+                        .follow-unfollow {
                             position: absolute;
                             width: auto;
                             height: auto;
                             right: 0px;
                             bottom: 50px;
-                            form{
+
+                            form {
                                 width: auto;
                                 height: auto;
                                 display: inline-block;
-                                button{
+
+                                button {
                                     padding: 8px 25px;
                                     background-color: $dark-blue-color;
                                     color: #fff;
                                     border-radius: 5px;
                                     outline: none;
-                                    border:none;
+                                    border: none;
                                     font-family: $karla;
                                     font-size: 14px;
                                     cursor: pointer;
                                 }
                             }
-                            a{
+
+                            a {
                                 padding: 8px 25px;
                                 background-color: $dark-blue-color;
                                 color: #fff;
                                 border-radius: 5px;
-                                img{
+
+                                img {
                                     width: 10px;
                                 }
                             }
-                            .profile-setting-btn{
+
+                            .profile-setting-btn {
                                 position: relative;
-                                &::after{
+
+                                &::after {
                                     content: 'Settings';
                                     position: absolute;
                                     width: auto;
@@ -139,7 +306,8 @@
                                     border-radius: 5px;
                                     display: none;
                                 }
-                                &:hover::after{
+
+                                &:hover::after {
                                     display: block;
                                 }
                             }
@@ -148,7 +316,8 @@
                     }
                 }
             }
-            .aboutMeSection{
+
+            .aboutMeSection {
                 width: 100%;
                 height: auto;
                 background-color: #fff;
@@ -156,40 +325,45 @@
                 border-radius: 20px;
                 box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
 
-                .aboutMeSection-Container{
+                .aboutMeSection-Container {
                     width: 95%;
                     min-height: 100px;
-                    .aboutMeTitle{
+
+                    .aboutMeTitle {
                         margin-top: 10px;
                         margin-bottom: 10px;
 
-                        h2{
+                        h2 {
                             font-size: 22px;
                             font-family: $karla;
                             color: $dark-deep-blue-color;
                         }
                     }
-                    .userFollowFolowing{
+
+                    .userFollowFolowing {
                         width: auto;
                         margin-bottom: 30px;
 
-                        p{
+                        p {
                             display: inline-block;
                             font-size: 14px;
                             cursor: pointer;
                             color: #8a8a8a;
                         }
-                        .user_followers{
+
+                        .user_followers {
                             margin-left: 10px;
                         }
                     }
-                    .aboutMeBio{
+
+                    .aboutMeBio {
                         width: 100%;
                         height: auto;
                         font-family: $karla;
                         color: #acacac;
                         margin-bottom: 10px;
-                        p{
+
+                        p {
                             font-size: 15px;
                             color: $dark-deep-blue-color;
                         }
@@ -197,12 +371,14 @@
                 }
             }
         }
-        .info-section{
+
+        .info-section {
             transition: 1s ease;
 
             // width: 100%;
             height: auto;
-            .user-social-media-link{
+
+            .user-social-media-link {
                 width: 100%;
                 height: auto;
                 background-color: #fff;
@@ -212,73 +388,87 @@
                 margin-bottom: 30px;
 
                 @include flexbox(center, row);
-                .user-social-media-container{
+
+                .user-social-media-container {
                     width: 90%;
                     // border: 1px solid #000;
                     min-height: 100px;
                     margin-top: 15px;
                     margin-bottom: 15px;
-                    .user-social-media-title{
+
+                    .user-social-media-title {
                         font-family: $karla;
                         width: auto;
                         margin-bottom: 20px;
                         height: auto;
-                        h2{
+
+                        h2 {
                             font-size: 20px;
                             color: $dark-deep-blue-color;
-                            
+
                         }
                     }
-                    .user-socail-medias{
+
+                    .user-socail-medias {
                         width: auto;
                         height: auto;
-                        a{
+
+                        a {
                             display: flex;
                             // justify-content: center;
                             margin-bottom: 10px;
                             align-items: center;
-                            img{
+
+                            img {
                                 width: 20px;
                                 margin-right: 10px;
                             }
-                            p{
+
+                            p {
                                 font-weight: 600;
                             }
-                            &:last-child{
+
+                            &:last-child {
                                 margin-bottom: 0;
                             }
                         }
-                        
+
                     }
                 }
 
             }
-            .user-recentPosts{
+
+            .user-recentPosts {
                 width: 100%;
                 min-height: auto;
                 background-color: #fff;
                 box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.089);
                 border-radius: 20px;
-                @include flexbox(center,row);
-                &-container{
+                @include flexbox(center, row);
+
+                &-container {
                     width: 90%;
                     min-height: 100px;
                     margin: 15px 0px;
-                    @include flexbox(space-between,column);
+                    @include flexbox(space-between, column);
                     align-items: flex-start;
-                    .user-recentPost-title{
+
+                    .user-recentPost-title {
                         width: auto;
                         height: auto;
                         font-family: $karla;
-                        h2{
+
+                        h2 {
                             font-size: 20px;
                         }
 
                     }
-                    .user-posts-all{
+
+                    .user-posts-all {
                         width: 100%;
-                        @include flexbox(center,row);
-                        h2{
+                        @include flexbox(center, row);
+
+                        h2 {
                             font-size: 20px;
                             color: #acacac;
                         }
@@ -286,25 +476,29 @@
 
                 }
             }
-            @media only screen and (max-width: 1050px){
-                &{
+
+            @media only screen and (max-width: 1050px) {
+                & {
                     display: none;
                 }
             }
         }
-        @media only screen and (max-width: 1050px){
-            &{
+
+        @media only screen and (max-width: 1050px) {
+            & {
                 grid-template-columns: 1fr;
             }
         }
     }
-    @media only screen and (max-width: 1050px){
-        &{
+
+    @media only screen and (max-width: 1050px) {
+        & {
             width: 700px;
         }
     }
-    @media only screen and (max-width: 750px){
-        &{
+
+    @media only screen and (max-width: 750px) {
+        & {
             width: 90%;
         }
     }

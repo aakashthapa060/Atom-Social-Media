@@ -1085,6 +1085,147 @@ a {
   }
 }
 
+.profile-edit {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.26);
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+
+.profile-edit .profile-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 500px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: 10px;
+  /* "auto" or "thin" */
+  scrollbar-color: #bebebe #fff;
+}
+
+.profile-edit .profile-form::-webkit-scrollbar {
+  width: 1em;
+}
+
+.profile-edit .profile-form::-webkit-scrollbar-thumb {
+  background-color: #bebebe;
+}
+
+.profile-edit .profile-form-container {
+  width: 450px;
+  height: 400px;
+}
+
+.profile-edit .profile-form-container .profile-form-title {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.profile-edit .profile-form-container .profile-form-title h2 {
+  font-size: 24px;
+  font-family: "karla", sans-serif;
+  color: #181a30;
+}
+
+.profile-edit .profile-form-container .actual-profile-form {
+  width: 100%;
+  height: auto;
+}
+
+.profile-edit .profile-form-container .actual-profile-form form {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-edit .profile-form-container .actual-profile-form form .form-control {
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: "karla", sans-serif;
+}
+
+.profile-edit .profile-form-container .actual-profile-form form .form-control p {
+  color: #8a8a8a;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.profile-edit .profile-form-container .actual-profile-form form .form-control input, .profile-edit .profile-form-container .actual-profile-form form .form-control textarea {
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  outline: none;
+  padding: 7px;
+  border-radius: 5px;
+  color: #181a30;
+  font-family: 14px;
+}
+
+.profile-edit .profile-form-container .actual-profile-form form .form-control textarea {
+  resize: vertical;
+  max-height: 200px;
+  min-height: 100px;
+  height: 100px;
+}
+
+.profile-edit .profile-form-container .actual-profile-form form .double-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  .profile-edit .profile-form-container .actual-profile-form form .double-item {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.profile-edit .profile-form-container .actual-profile-form form .buttons {
+  margin-bottom: 20px;
+}
+
+.profile-edit .profile-form-container .actual-profile-form form .buttons button {
+  padding: 7px 20px;
+  outline: none;
+  border: none;
+  background: #5e4ccf;
+  color: #fff;
+  font-size: 14px;
+  font-family: "karla", sans-serif;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-edit .profile-form-container .actual-profile-form form .buttons a {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+  .profile-edit .profile-form-container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .profile-edit .profile-form {
+    width: 90%;
+  }
+}
+
 .profile-container {
   position: relative;
   width: 1000px;
@@ -1100,6 +1241,12 @@ a {
   grid-template-columns: 650px 300px;
   grid-template-rows: 1fr;
   grid-gap: 50px;
+}
+
+@media only screen and (max-width: 550px) {
+  .profile-container .profile-section-main {
+    width: 90%;
+  }
 }
 
 .profile-container .profile-section-main .profile-section {

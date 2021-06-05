@@ -1,7 +1,52 @@
 {% extends 'base2.html' %}
 {% load static %}
 {% block content %}
+<div class="profile-edit">
+    <div class="profile-form">
+        <div class="profile-form-container">
+            <div class="profile-form-title">
+                <h2>Edit Profile</h2>
+                <a class="profile-form-close-btn">close</a>
+            </div>
+            <div class="actual-profile-form">
+                <form action="." method="POST" enctype="multipart/form-data">
+                    <div class="form-control double-item">
+                        <div class="first_name_box">
+                            <p>{{user_form.first_name.label}}</p>
+                            {{user_form.first_name}}
+                        </div>
+                        <div class="last_name_box">
+                            <p>{{user_form.last_name.label}}</p>
+                            {{user_form.last_name}}
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <p>{{user_form.username.label}}</p>
+                        {{user_form.username}}
+                    </div>
+                    <div class="form-control">
+                        <p>{{user_form.email.label}}</p>
+                        {{user_form.email}}
+                    </div>
+                    <div class="form-control">
+                        <p>{{profile_form.profile_pic.label}}</p>
+                        <input type="file" name="profile_pic" accept="image/*" id="id_profile_pic">
+                    </div>
+                    <div class="form-control">
+                        <p>{{profile_form.user_bio.label}}</p>
+                        {{profile_form.user_bio}}
+                    </div>
+                    <div class="buttons">
+                        <button type="submit">Save</button>
+                        <a class="profile_edit_c_btn">Cancle</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="profile-container">
+
     <div class="profile-section-main">
         <div class="profile-section">
             <div class="profile-main-part">
@@ -46,7 +91,7 @@
 
                         {% if request.user == get_user %}
                         <div class="follow-unfollow">
-                            <a href="{% url 'users:user_edit' %}">change profile</a>
+                            <a>change profile</a>
                             <a href="#" class="profile-setting-btn"><img src="{% static 'img/icons/setting.svg' %}"
                                     alt=""></a>
                         </div>

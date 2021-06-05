@@ -74,6 +74,9 @@ def logout_view(request):
 def profile_view(request, username):
     get_user = get_object_or_404(User, username = username)
     active_user = request.user
+    user_form = User_Edit_Form(instance= active_user)
+    profile_form = Profile_Edit_Form(instance=active_user.profile)
+
     if request.user == get_user:
         followed = "user"
     else:
@@ -84,7 +87,9 @@ def profile_view(request, username):
 
     context = {
         "get_user": get_user,
-        "followed": followed
+        "followed": followed,
+        "user_form": user_form,
+        "profile_form": profile_form
     }
     return render(request, "users/profile.html", context)
 
@@ -108,13 +113,10 @@ def follow_unfollow(request, username):
 
 
 
-def user_edit_view(request):
-    active_user = request.user
-    user_form = User_Edit_Form(instance= active_user)
-    profile_form = Profile_Edit_Form(instance=active_user.profile)
+# def user_edit_view(request):
 
-    context = {
-        "user_form": user_form,
-        "profile_form": profile_form
-    }
-    return render(request, "users/profile.html",context)
+#     context = {
+#         "user_form": user_form,
+#         "profile_form": profile_form
+#     }
+#     return render(request, "users/profile.html",context)

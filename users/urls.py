@@ -11,6 +11,6 @@ urlpatterns = [
     path("logout/", views.logout_view, name = "logout_view"),
     path("u/<str:username>/", views.profile_view, name = "profile_view"),
     path("follow_unfollow/<str:username>/", views.follow_unfollow, name = "follow_unfollow"),
-    path("settings/up_edit/", views.user_edit_view, name = "user_edit"),
+    # path("settings/up_edit/", views.user_edit_view, name = "user_edit"),
 
 ]
