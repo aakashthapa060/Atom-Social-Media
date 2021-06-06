@@ -10,6 +10,7 @@
             </div>
             <div class="actual-profile-form">
                 <form action="." method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <div class="form-control double-item">
                         <div class="first_name_box">
                             <p>{{user_form.first_name.label}}</p>
@@ -91,7 +92,7 @@
 
                         {% if request.user == get_user %}
                         <div class="follow-unfollow">
-                            <a>change profile</a>
+                            <a class="profile-change-btn">change profile</a>
                             <a href="#" class="profile-setting-btn"><img src="{% static 'img/icons/setting.svg' %}"
                                     alt=""></a>
                         </div>

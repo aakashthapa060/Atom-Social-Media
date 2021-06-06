@@ -1,3 +1,4 @@
+
 .profile-edit {
     width: 100%;
     height: 100vh;
@@ -6,6 +7,7 @@
     z-index: 5;
     top: 0;
     left: 0;
+    display: none;
 
     .profile-form {
 
@@ -20,16 +22,18 @@
         border-radius: 20px;
         overflow-y: scroll;
         overflow-x: hidden;
-        scrollbar-width: 10px;          /* "auto" or "thin" */
+        scrollbar-width: 10px;
+        /* "auto" or "thin" */
         scrollbar-color: rgb(190, 190, 190) #fff;
 
         &::-webkit-scrollbar {
             width: 1em;
         }
+
         &::-webkit-scrollbar-thumb {
             background-color: rgb(190, 190, 190);
             // outline: 1px solid slategrey;
-          }
+        }
 
         &-container {
             width: 450px;
@@ -39,17 +43,21 @@
                 width: 100%;
                 height: auto;
                 margin-bottom: 20px;
-                // position: fixed;
+                display: flex;
+                justify-content: space-between;
 
                 h2 {
                     font-size: 24px;
                     font-family: $karla;
                     color: $dark-deep-blue-color;
                 }
-                a{
+
+                a {
                     padding: 4px 16px;
                     background: $orange-bright-color;
                     color: #fff;
+                    border-radius: 5px;
+                    cursor: pointer;
                 }
             }
 
@@ -65,13 +73,16 @@
                         width: 100%;
                         margin-bottom: 10px;
                         font-family: $karla;
-                        p{
+
+                        p {
                             color: #8a8a8a;
                             margin-bottom: 3px;
                             font-size: 14px;
 
                         }
-                        input,textarea {
+
+                        input,
+                        textarea {
                             width: 100%;
                             border: 1px solid #dfdfdf;
                             outline: none;
@@ -79,9 +90,10 @@
                             border-radius: 5px;
                             color: $dark-deep-blue-color;
                             font-family: 14px;
-                            
+
                         }
-                        textarea{
+
+                        textarea {
                             // min-height: 20px;
                             resize: vertical;
                             max-height: 200px;
@@ -89,24 +101,28 @@
                             height: 100px;
                         }
                     }
-                    .double-item{
+
+                    .double-item {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         grid-template-rows: 1fr;
                         grid-gap: 10px;
-                        @media only screen and (max-width: 400px){
-                            &{
+
+                        @media only screen and (max-width: 400px) {
+                            & {
                                 grid-template-columns: 1fr;
                                 grid-template-rows: 1fr 1fr;
                             }
                         }
                     }
-                    .buttons{
+
+                    .buttons {
                         margin-bottom: 20px;
-                        button{
+
+                        button {
                             padding: 7px 20px;
                             outline: none;
-                            border:none;
+                            border: none;
                             background: $dark-blue-color;
                             color: #fff;
                             font-size: 14px;
@@ -115,21 +131,24 @@
                             border-radius: 5px;
                             cursor: pointer;
                         }
-                        a{
+
+                        a {
                             cursor: pointer;
                         }
 
                     }
                 }
             }
-            @media only screen and (max-width: 550px){
-                &{
+
+            @media only screen and (max-width: 550px) {
+                & {
                     width: 90%;
                 }
             }
         }
-        @media only screen and (max-width: 550px){
-            &{
+
+        @media only screen and (max-width: 550px) {
+            & {
                 width: 90%;
             }
         }
@@ -144,7 +163,7 @@
 
     // background: red;
     div {
-        border: 1px solid #000;
+        // border: 1px solid #000;
     }
 
     .profile-section-main {
@@ -156,11 +175,13 @@
         grid-template-columns: 650px 300px;
         grid-template-rows: 1fr;
         grid-gap: 50px;
-        @media only screen and (max-width: 550px){
-            &{
+
+        @media only screen and (max-width: 550px) {
+            & {
                 width: 90%;
             }
         }
+
         .profile-section {
             transition: 0.5s ease;
             width: 100%;
@@ -261,7 +282,6 @@
                             height: auto;
                             right: 0px;
                             bottom: 50px;
-
                             form {
                                 width: auto;
                                 height: auto;
@@ -285,6 +305,7 @@
                                 background-color: $dark-blue-color;
                                 color: #fff;
                                 border-radius: 5px;
+                                cursor: pointer;
 
                                 img {
                                     width: 10px;

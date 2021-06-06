@@ -74,11 +74,18 @@ def logout_view(request):
 def profile_view(request, username):
     get_user = get_object_or_404(User, username = username)
     active_user = request.user
-    user_form = User_Edit_Form(instance= active_user)
-    profile_form = Profile_Edit_Form(instance=active_user.profile)
-
+    user_form = User_Edit_Form(request.POST or None, instance=active_user)
+    profile_form = Profile_Edit_Form(request.POST or None, request.FILES or None, instance=active_user.profile)
     if request.user == get_user:
         followed = "user"
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, "Profile Updated Successfully")
+            return redirect("users:profile_view", username = username)
+        else:
+            user_form = User_Edit_Form(instance= active_user)
+            profile_form = Profile_Edit_Form(instance= active_user.profile)
     else:
         if active_user in get_user.profile.follower.all() and get_user in active_user.profile.following.all():
             followed = True

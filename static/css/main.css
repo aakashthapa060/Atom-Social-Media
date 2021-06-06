@@ -1093,6 +1093,7 @@ a {
   z-index: 5;
   top: 0;
   left: 0;
+  display: none;
 }
 
 .profile-edit .profile-form {
@@ -1132,12 +1133,22 @@ a {
   width: 100%;
   height: auto;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .profile-edit .profile-form-container .profile-form-title h2 {
   font-size: 24px;
   font-family: "karla", sans-serif;
   color: #181a30;
+}
+
+.profile-edit .profile-form-container .profile-form-title a {
+  padding: 4px 16px;
+  background: #ff3852;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .profile-edit .profile-form-container .actual-profile-form {
@@ -1162,7 +1173,8 @@ a {
   font-size: 14px;
 }
 
-.profile-edit .profile-form-container .actual-profile-form form .form-control input, .profile-edit .profile-form-container .actual-profile-form form .form-control textarea {
+.profile-edit .profile-form-container .actual-profile-form form .form-control input,
+.profile-edit .profile-form-container .actual-profile-form form .form-control textarea {
   width: 100%;
   border: 1px solid #dfdfdf;
   outline: none;
@@ -1378,6 +1390,7 @@ a {
   background-color: #5e4ccf;
   color: #fff;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .profile-container .profile-section-main .profile-section .profile-main-part .profile-info-part .profile-info-container .follow-unfollow a img {
