@@ -1,4 +1,6 @@
-
+div{
+    // border: 1px solid #000;
+}
 .profile-edit {
     width: 100%;
     height: 100vh;
@@ -154,18 +156,110 @@
         }
     }
 }
+// Profile Link Section
+.profile-link-section{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.26);
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+    .profile-link-form{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        @include flexbox(center, row);
+        @media only screen and (max-width: 450px){
+            &{
+                width: 90%;
+            }
+        }
+        .profile-link-container{
+            width: 360px;
+            height: 100%;
+            margin: 30px 0px;
+            @media only screen and (max-width: 450px){
+                &{
+                    width: 90%;
+                }
+            }
+            .profile-link-title{
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                h2{
+                    font-size: 22px;
+                    font-family: $karla;
+                }
+            }
+            .actual-profile-link-form{
+                width: 100%;
+                height: auto;
+                form{
+                    width: 100%;
+                    height: auto;
+                    .form-control{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 10px;
+                        font-family: $karla;
+                        p{
+                            margin-bottom: 5px;
+                        }
+                        input{
+                            outline: none;
+                            border: 1px solid $dark-deep-blue-color;
+                            border-radius: 5px;
+                            width: 100%;
+                            padding: 5px;
+                            font-size: 14px;
+                        }
+                    }
+                    .buttons{
+                        margin-top: 20px;
+                        width: 100%;
+                        button{
+                            font-size: 14px;
+                            font-family: $karla;
+                            padding: 6px 16px;
+                            background-color: $dark-blue-color;
+                            color: #fff;
+                            outline: none;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            margin-right: 5px;
+                        }
+                        a{
+                            cursor: pointer;
+                            background-color: $orange-bright-color;
+                            color: #fff;
+                            padding: 6px 16px;
+                            border-radius: 5px;
 
+                        }
+                    }
+                }
 
+            }
+        }
+    }
+}
+
+// Profile Main
 .profile-container {
     position: relative;
     width: 1000px;
     margin: 0 auto;
 
     // background: red;
-    div {
-        // border: 1px solid #000;
-    }
-
     .profile-section-main {
         width: 100%;
         height: auto;
@@ -301,9 +395,10 @@
                             }
 
                             a {
-                                padding: 8px 25px;
-                                background-color: $dark-blue-color;
+                                padding: 5px 20px;
+                                background-color: $dark-deep-blue-color;
                                 color: #fff;
+                                font-size: 13px;
                                 border-radius: 5px;
                                 cursor: pointer;
 
@@ -518,7 +613,7 @@
         }
     }
 
-    @media only screen and (max-width: 750px) {
+    @media only screen and (max-width: 720px) {
         & {
             width: 90%;
         }

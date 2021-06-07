@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.forms import fields, models
 from django.forms.widgets import PasswordInput
 from django.contrib.auth.hashers import check_password
-from .models import Profile
+from .models import Profile,SocialMediaLink
 User = get_user_model()
 
 unallowed_username = ['fuck', 'fuck123', 'bitch', 'yourdad', 'yourmom','suck']
@@ -130,3 +130,50 @@ class User_Edit_Form(forms.ModelForm):
     class Meta:
         model = User
         fields = ("first_name", "last_name", "username", "email")
+
+    
+
+class LinksForm(forms.ModelForm):
+    instagram_link = forms.URLField(
+        required=False,
+        label="Instagram",
+        widget= forms.URLInput(
+            attrs={
+                "placeholder": "Instagram"
+            }
+        )
+    )
+    facebook_link = forms.URLField(
+        required=False,
+
+        label="Facebook",
+        widget= forms.URLInput(
+            attrs={
+                "placeholder": "Facebook"
+            }
+        )
+    )
+    twitter_link = forms.URLField(
+        required=False,
+
+        label="Twitter",
+        widget= forms.URLInput(
+            attrs={
+                "placeholder": "Twitter"
+            }
+        )
+    )
+    github_link = forms.URLField(
+        required=False,
+
+        label="Github",
+        widget= forms.URLInput(
+            attrs={
+                "placeholder": "GitHub"
+            }
+        )
+    )
+    class Meta:
+        model = SocialMediaLink
+        fields = ("instagram_link","facebook_link","twitter_link","github_link")
+    

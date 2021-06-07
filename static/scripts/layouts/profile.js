@@ -41,3 +41,24 @@ profile_form_close_btn2.click(() => {
         profile_open = false
     }
 })
+
+
+//Profile Link Edit
+let profile_link_cancle_btn = $(".profile-link-section .profile-link-form .profile-link-container .actual-profile-link-form form .buttons a");
+let profile_link_container = $(".profile-link-section ")
+let profile_link_btn = $(".profile-container .profile-section-main .profile-section .profile-main-part .profile-info-part .profile-info-container .follow-unfollow .profile-link-btn")
+profile_link_open = false
+
+profile_link_btn.click(() => {
+    if(profile_link_open === false){
+        profile_link_container.fadeIn()
+        profile_link_open = true
+    }
+});
+
+profile_link_cancle_btn.click(() => {
+    if(profile_link_open === true){
+        profile_link_container.fadeOut()
+        profile_link_open = false
+    }
+})

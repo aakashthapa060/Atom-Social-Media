@@ -46,6 +46,46 @@
         </div>
     </div>
 </div>
+<!-- Profile Link Container -->
+<div class="profile-link-section">
+    <div class="profile-link-form">
+        <div class="profile-link-container">
+            <div class="profile-link-title">
+                <h2>Edit Links</h2>
+            </div>
+            <div class="actual-profile-link-form">
+                <form action="." method="post">
+                    {% csrf_token %}
+                    <div class="form-control">
+                        <p>{{links_form.instagram_link.label}}</p>
+                        {{links_form.instagram_link}}
+
+                    </div>
+                    <div class="form-control">
+                        <p>{{links_form.facebook_link.label}}</p>
+                        {{links_form.facebook_link}}
+
+                    </div>
+                    <div class="form-control">
+                        <p>{{links_form.twitter_link.label}}</p>
+                        {{links_form.twitter_link}}
+
+                    </div>
+                    <div class="form-control">
+                        <p>{{links_form.github_link.label}}</p>
+                        {{links_form.github_link}}
+
+                    </div>
+                    <div class="buttons">
+                        <button type="submit">Save</button>
+                        <a class="link-edit-cancle-btn">cancle</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Profile Main Section -->
 <div class="profile-container">
 
     <div class="profile-section-main">
@@ -92,7 +132,8 @@
 
                         {% if request.user == get_user %}
                         <div class="follow-unfollow">
-                            <a class="profile-change-btn">change profile</a>
+                            <a class="profile-change-btn">Edit profile</a>
+                            <a class="profile-link-btn">Edit Link</a>
                             <a href="#" class="profile-setting-btn"><img src="{% static 'img/icons/setting.svg' %}"
                                     alt=""></a>
                         </div>
