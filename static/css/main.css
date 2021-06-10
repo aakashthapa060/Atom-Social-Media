@@ -1086,10 +1086,84 @@ a {
 }
 
 .main-container {
+  position: relative;
+  top: 30px;
   width: 1000px;
   height: 10px;
-  border: 1px solid #000;
-  margin: 0 auto;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: 650px 300px;
+  grid-template-rows: auto;
+  grid-gap: 50px;
+}
+
+.main-container .main-info-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.main-container .main-info-section .suggest_account_section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.main-container .main-info-section .suggest_account_section_container {
+  width: 270px;
+  height: 360px;
+  font-family: "karla", sans-serif;
+}
+
+.main-container .main-info-section .suggest_account_section_container .suggest_account_section_title {
+  width: 100%;
+  height: auto;
+  margin: 10px 0px 20px 0px;
+}
+
+.main-container .main-info-section .suggest_account_section_container .suggest_account_section_title h2 {
+  font-size: 20px;
+  color: #181a30;
+}
+
+.main-container .main-info-section .suggest_account_section_container .suggest_account_container {
+  width: 100%;
+  height: 10px;
+}
+
+.main-container .main-info-section .suggest_account_section_container .suggest_account_container .suggest_account {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.main-container .main-info-section .suggest_account_section_container .suggest_account_container .suggest_account .suggest_user_img {
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+}
+
+.main-container .main-info-section .suggest_account_section_container .suggest_account_container .suggest_account .suggest_user_img img {
+  width: 45px;
+  border-radius: 50%;
+}
+
+.main-container .main-info-section .suggest_account_section_container .suggest_account_container .suggest_account .suggest_user_info a {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.main-container .main-info-section .suggest_account_section_container .suggest_account_container .suggest_account .suggest_user_info p {
+  color: #696969;
+  font-size: 14px;
 }
 
 .profile-edit {

@@ -2,6 +2,33 @@
 
 {% block content %}
 <div class="main-container">
-    
+    <div class="posts-section">
+        <div class="create_post_section">
+
+        </div>
+        <div class="all_posts_section">
+
+        </div>
+    </div>
+    <div class="main-info-section">
+        <div class="suggest_account_section">
+            <div class="suggest_account_section_container">
+                <div class="suggest_account_section_title">
+                    <h2>Suggested Account</h2>
+                </div>
+                <div class="suggest_account_container">
+                    <div class="suggest_account">
+                        <div class="suggest_user_img">
+                            <img src="{{request.user.profile.profile_pic.url}}" alt="">
+                        </div>
+                        <div class="suggest_user_info">
+                            <a href="#">{{request.user.first_name}} {{request.user.last_name}}</a>
+                            <p>@{{request.user.username}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}

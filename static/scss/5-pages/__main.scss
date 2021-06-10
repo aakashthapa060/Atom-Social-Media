@@ -1,6 +1,77 @@
 .main-container{
+    position: relative;
+    top: 30px;
     width: 1000px;
     height: 10px;
-    border: 1px solid #000;
-    margin: 0 auto;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 650px 300px;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+    .posts-section{
+        // height: 1000px;
+    }
+    .main-info-section{
+        position: relative;
+        width: 100%;
+        height: auto;
+        .suggest_account_section{
+            position: relative;
+            width: 100%;
+            height: auto;
+            background: #fff;
+            border-radius: 10px;
+            @include flexbox(center,row);
+            &_container{
+                width: 270px;
+                height: 360px;
+                font-family: $karla;
+                // border: 1px solid #000;
+                .suggest_account_section_title{
+                    width: 100%;
+                    height: auto;
+                    margin: 10px 0px 20px 0px;
+                    h2{
+                        font-size: 20px;
+                        color: $dark-deep-blue-color;
+                        
+                    }
+                }
+                .suggest_account_container{
+                    width: 100%;
+                    height: 10px;
+
+                    .suggest_account{
+                        width: 100%;
+                        height: 50px;
+                        // border: 1px solid #000;
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        .suggest_user_img{
+                            width: auto;
+                            height: auto;
+                            margin-right: 10px;
+                            img{
+                                width: 45px;
+                                border-radius: 50%;
+                            }
+                        }
+                        .suggest_user_info{
+                            a{
+                                font-size: 16px;
+                                margin-bottom: 5px;
+                            }
+                            p{
+                                color: #696969;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+    }
 }
