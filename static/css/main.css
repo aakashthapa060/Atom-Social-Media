@@ -1097,10 +1097,167 @@ a {
   grid-gap: 50px;
 }
 
-.main-container .main-info-section {
-  position: relative;
+.main-container .posts-section {
   width: 100%;
   height: auto;
+}
+
+.main-container .posts-section .all_posts_section {
+  width: 100%;
+  height: auto;
+}
+
+.main-container .posts-section .all_posts_section .post {
+  width: 100%;
+  height: auto;
+  max-height: auto;
+  background: #fff;
+  border-radius: 10px;
+  font-family: "karla", sans-serif;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container {
+  width: 600px;
+  height: 100%;
+  margin: 0px auto;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .post_title {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .post_title .post_author_info {
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .post_title .post_author_info .img {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: #5e4ccf;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .post_title .post_author_info .img img {
+  width: 42px;
+  border-radius: 50%;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .post_title .post_author_info .info h2 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .post_title .post_author_info .info p {
+  font-size: 13px;
+  color: #bdbcbc;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .post_content {
+  width: 100%;
+  height: auto;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .post_content p {
+  font-size: 15px;
+}
+
+.main-container .posts-section .all_posts_section .post .post_container .extra_content {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #696969;
+}
+
+.main-container .main-info-section {
+  float: right;
+  position: relative;
+  width: 300px;
+  height: auto;
+}
+
+.main-container .main-info-section .my_account_info {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.main-container .main-info-section .my_account_info_container {
+  width: 270px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.main-container .main-info-section .my_account_info_container img {
+  width: 50px;
+}
+
+.main-container .main-info-section .my_account_info_container .my_info {
+  display: flex;
+  align-items: center;
+  font-family: "karla", sans-serif;
+}
+
+.main-container .main-info-section .my_account_info_container .my_info .img {
+  width: 50px;
+  height: 50px;
+  background: #5e4ccf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 50%;
+}
+
+.main-container .main-info-section .my_account_info_container .my_info .img img {
+  width: 42px;
+  border-radius: 50%;
+}
+
+.main-container .main-info-section .my_account_info_container .my_info .info {
+  margin-left: 10px;
+}
+
+.main-container .main-info-section .my_account_info_container .my_info .info h2 {
+  font-size: 16px;
+  color: #181a30;
+  margin-bottom: 2px;
+}
+
+.main-container .main-info-section .my_account_info_container .my_info .info p {
+  font-size: 13px;
+  color: #999999;
+}
+
+.main-container .main-info-section .my_account_info_container .profile_view a {
+  padding: 7px 16px;
+  color: #fff;
+  background: #5e4ccf;
+  border-radius: 5px;
 }
 
 .main-container .main-info-section .suggest_account_section {

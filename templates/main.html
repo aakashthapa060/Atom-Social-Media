@@ -7,17 +7,54 @@
 
         </div>
         <div class="all_posts_section">
+            <div class="post">
+                <div class="post_container">
+                    <div class="post_title">
+                        <div class="post_author_info">
+                            <div class="img">
+                                <img src="{{request.user.profile.profile_pic.url}}" alt="">
+                            </div>
+                            <div class="info">
+                                <h2>Aakash Thapa</h2>
+                                <p>@aakuttp</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="post_content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusantium quisquam expedita ea harum doloremque ad nemo, illum vitae omnis.</p>
+                    </div>
+                    <div class="extra_content">
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="main-info-section">
+        <div class="my_account_info">
+            <div class="my_account_info_container">
+                <div class="my_info">
+                    <div class="img">
+                        <img src="{{request.user.profile.profile_pic.url}}" alt="">
+                    </div>
+                    <div class="info">
+                        <h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
+                        <p>@{{request.user.username}}</p>
+                    </div>
+                </div>
+                <div class="profile_view">
+                    <a href="{% url 'users:profile_view' request.user%}">Visit</a>
+                </div>
+            </div>
+        </div>
         <div class="suggest_account_section">
             <div class="suggest_account_section_container">
                 <div class="suggest_account_section_title">
                     <h2>Suggested Account</h2>
                 </div>
                 <div class="suggest_account_container">
-                    <div class="suggest_account">
+                    <!-- <div class="suggest_account">
                         <div class="suggest_user_img">
                             <img src="{{request.user.profile.profile_pic.url}}" alt="">
                         </div>
@@ -25,7 +62,7 @@
                             <a href="#">{{request.user.first_name}} {{request.user.last_name}}</a>
                             <p>@{{request.user.username}}</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

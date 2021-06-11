@@ -9,12 +9,138 @@
     grid-template-rows: auto;
     grid-gap: 50px;
     .posts-section{
-        // height: 1000px;
-    }
-    .main-info-section{
-        position: relative;
         width: 100%;
         height: auto;
+        .all_posts_section{
+            width: 100%;
+            height: auto;
+            .post{
+                width: 100%;
+                // min-height: 100px;
+                height: auto;
+                max-height: auto;
+                background: #fff;
+                border-radius: 10px;
+                font-family: $karla;
+                .post_container{
+                    width: 600px;
+                    height: 100%;
+                    margin: 0px auto;
+                    .post_title{
+                        width: 100%;
+                        height: 70px;
+                        margin-bottom: 5px;
+                        @include flexbox(space-between,row);
+                        .post_author_info{
+                            width: auto;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                        
+                            .img{
+                                width: 50px;
+                                height: 50px;
+                                @include flexbox(center,row);
+                                background: $dark-blue-color;
+                                border-radius: 50%;
+                                margin-right: 10px;
+                                img{
+                                    width: 42px;
+                                    border-radius: 50%;
+                                }
+                            }
+                            .info{
+                                h2{
+                                    font-size: 16px;
+                                    margin-bottom: 2px;
+                                }
+                                p{
+                                    font-size: 13px;
+                                    color: #bdbcbc;
+                                }
+                            }
+                        }
+
+                    }
+                    .post_content{
+                        width: 100%;
+                        height: auto;
+                        text-align:left;
+                        margin-bottom:10px;
+
+                        p{
+                            font-size: 15px;
+                        }
+                    }
+                    .extra_content{
+                        width: 100%;
+                        height: 50px;
+                        border-top: 1px solid #696969;
+                    }
+                }
+            }
+        }
+    }
+    .main-info-section{
+        float: right;
+        position: relative;
+        width: 300px;
+        height: auto;
+        .my_account_info{
+            position: relative;
+
+            width: 100%;
+            height: 100px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            @include flexbox(center,row);
+            &_container{
+                width: 270px;
+                height: 60px;
+                img{
+                    width: 50px;
+                }
+                @include flexbox(space-between,row);
+                .my_info{
+                    display: flex;
+                    align-items: center;
+                    font-family: $karla;
+                    .img{
+                        width: 50px;
+                        height: 50px;
+                        background: $dark-blue-color;
+                        @include flexbox(center,row);
+                        border-radius: 50%;
+                        img{
+                            width: 42px;
+                            border-radius: 50%;
+                        }
+                    }
+                    .info{
+                        margin-left: 10px;
+                        h2{
+                            font-size: 16px;
+                            color: $dark-deep-blue-color;
+                            margin-bottom: 2px;
+                        }
+                        p{
+                            font-size: 13px;
+                            color: #999999;
+                        }
+                    }
+                }
+                .profile_view{
+                    a{
+                        padding: 7px 16px;
+                        color: #fff;
+                        background: $dark-blue-color;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+
         .suggest_account_section{
             position: relative;
             width: 100%;
