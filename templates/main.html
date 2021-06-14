@@ -7,28 +7,38 @@
 
         </div>
         <div class="all_posts_section">
+            {% for post in posts %}
             <div class="post">
                 <div class="post_container">
                     <div class="post_title">
                         <div class="post_author_info">
                             <div class="img">
-                                <img src="{{request.user.profile.profile_pic.url}}" alt="">
+                                <img src="{{post.author.profile.profile_pic.url}}" alt="">
                             </div>
                             <div class="info">
-                                <h2>Aakash Thapa</h2>
-                                <p>@aakuttp</p>
+                                <h2>{{post.author.first_name}} {{post.author.last_name}}</h2>
+                                <p>@{{post.author.username}}</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="post_content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusantium quisquam expedita ea harum doloremque ad nemo, illum vitae omnis.</p>
+                        <p>{{post.status}}</p>
                     </div>
-                    <div class="extra_content">
-                        
-                    </div>
+                    <!-- <div class="extra_content">
+                        <div class="like">
+                            <a href="#">Like</a>
+                        </div>
+                        <div class="dislike">
+                            <a href="#">Dislike</a>
+                        </div>
+                        <div class="comment">
+                            <p>comment</p>
+                        </div>
+                    </div> -->
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
     <div class="main-info-section">

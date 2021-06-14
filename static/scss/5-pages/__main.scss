@@ -66,21 +66,27 @@
                         width: 100%;
                         height: auto;
                         text-align:left;
-                        margin-bottom:10px;
+                        margin-bottom:15px;
 
                         p{
                             font-size: 15px;
                         }
                     }
-                    .extra_content{
-                        width: 100%;
-                        height: 50px;
-                        border-top: 1px solid #696969;
-                    }
+                    // .extra_content{
+                    //     width: 100%;
+                    //     height: 50px;
+                    //     border-top: 1px solid #696969;
+                    //     display: flex;
+                    //     align-items: center;
+                    //     div{
+                    //         margin-left: 10px;
+                    //     }
+                    // }
                 }
             }
         }
     }
+    // Left side
     .main-info-section{
         float: right;
         position: relative;

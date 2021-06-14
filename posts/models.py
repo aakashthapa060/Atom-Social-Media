@@ -12,6 +12,9 @@ class Post(models.Model):
     disLikes = models.ManyToManyField(User, related_name="post_dislike",null=True,blank=True)
     pub_date = models.DateTimeField(default= timezone.now)
 
+    class Meta:
+        ordering = ["-pub_date"]
+
     def __str__(self):
         return f"{self.author} / {self.status}"
 
